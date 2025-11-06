@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 import { motion, useReducedMotion } from 'framer-motion';
 
@@ -44,6 +45,7 @@ export default function Hero3D() {
         </div>
       )}
 
+      {/* Overlay should not block scene interaction */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60 dark:via-black/30 dark:to-black/80" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-4">
@@ -60,18 +62,18 @@ export default function Hero3D() {
             Creative Web & Game Developer — crafting premium, high-performance experiences blending WebGL, motion, and engineering.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="#projects"
+            <Link
+              to="/projects"
               className="pointer-events-auto inline-flex items-center rounded-full bg-white/90 text-gray-900 px-4 py-2 text-sm font-medium backdrop-blur hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-500"
             >
               View Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="pointer-events-auto inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-purple-600 text-white px-4 py-2 text-sm font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-500"
             >
               Hire Me
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
